@@ -18,6 +18,9 @@
 
 \begin{document}
 \selectlanguage{english}
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
 
 \maketitle
 \input{sections/constants.tex}
@@ -28,8 +31,9 @@
 \input{sections/quantum_physics.tex}
 \input{sections/theory_solids.tex}
 
+\clearpage
 \appendix
-%\input{sections/appendix.tex}
+\input{sections/appendix.tex}
 
 
 \end{document}
