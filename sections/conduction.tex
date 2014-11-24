@@ -29,3 +29,25 @@ Matthiessen's rule
 \begin{equation}
     \rho = \rho_0 \left[ 1 + \alpha_0 \left( T - T_0 \right) \right]
 \end{equation}
+
+
+\section{Thermal conduction}
+
+Fourier's law of thermal conduction states that
+\begin{equation}
+	\frac{dQ}{dt} = -A \kappa \frac{\partial T}{\partial x}
+\end{equation}
+
+where $\frac{\partial T}{\partial x}$ is the temperature gradient $\nabla T$.
+This is similar to Ohm's law:
+\begin{equation*}
+	\frac{I_x}{A} = J_x = - \sigma \frac{\partial V}{\partial x} = \sigma E_x
+\end{equation*}
+In metals, $\kappa$ and $\sigma$ originate from free electrons and are related by the Wiedemann~Franz~Lorenz law
+\begin{equation}
+	\frac{\kappa}{\sigma T} = C_{WFL} = \text{const.}
+\end{equation}
+where $C_{WFL}$ is called the Lorenz number or the Wiedemann~Franz~Lorenz coefficient.
+\begin{equation}
+	C_{WFL} = \frac{\pi^2 k_B^2}{3 e^2} = \SI{2.44e-8}{\watt\ohm\per\kelvin\squared}
+\end{equation}

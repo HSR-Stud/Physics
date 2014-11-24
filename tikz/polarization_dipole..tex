@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\node[draw,circle] (qm) at (-1,0) {$-$};
+	\node[above of=qm] {$-Q$};
+	
+	\node[draw,circle] (qp) at (1,0) {$+$};
+	\node[above of=qp] {$+Q$};
+	
+	\draw[->] (qm) to (qp) node[midway, below] {$a$};
+\end{tikzpicture}
