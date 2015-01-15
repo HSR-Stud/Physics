@@ -1,0 +1,52 @@
+\begin{tikzpicture}
+\begin{scope}[shift={(-5,0)}]
+    \begin{axis}[ticks=none, axis lines=middle, clip=false,
+    xmin=0,xmax=6,ymin=0,ymax=1.2,
+    width=8cm,height=4cm,
+    xlabel={x},ylabel={V(x)},
+    every axis x label/.style={
+        at={(ticklabel* cs:1)},
+        anchor=west,
+    },
+    every axis y label/.style={
+        at={(ticklabel* cs:1)},
+        anchor=south,
+    },
+    ]
+        \addplot[mark=none] coordinates {
+            (0,1)
+            (2,1)
+            (2,0)
+            (4,0)
+            (4,1)
+            (6,1)
+        };
+        
+        \node[anchor=north] at (xticklabel cs:0.333) {0};
+        \node[anchor=north] at (xticklabel cs:0.666) {a};
+        \node[anchor=east] at (yticklabel cs:0) {0};
+        \node[anchor=east] at (yticklabel cs:0.833) {$\infty$};
+        
+        \node[label={Electron},draw=HSRBlue,fill=HSRBlue60,circle,minimum size=0.2] at (axis cs:2.8,0.4){};
+    \end{axis}
+\end{scope}
+\begin{scope}[shift={(+5,0)}]
+    \begin{axis}[ticks=none, axis lines=middle, clip=false,
+    width=6cm,height=4cm,
+    domain=0:1,
+    samples=101,
+    ymin=0, ymax=7,
+    ]
+        \addplot[HSRBlue,mark=none] {sin(deg(1*pi*x))};
+        \addplot[HSRBlue,mark=none] {2+sin(deg(2*pi*x))};
+        \addplot[HSRBlue,mark=none] {4+sin(deg(3*pi*x))};
+        \addplot[HSRBlue,mark=none] {6+sin(deg(4*pi*x))};
+        \node[anchor=north] at (xticklabel cs:0) {0};
+        \node[anchor=north] at (xticklabel cs:1) {a};
+        \node[anchor=east] at (yticklabel cs:0.142) {$\Psi_1$};
+        \node[anchor=east] at (yticklabel cs:0.380) {$\Psi_2$};
+        \node[anchor=east] at (yticklabel cs:0.618) {$\Psi_3$};
+        \node[anchor=east] at (yticklabel cs:0.857) {$\Psi_4$};
+    \end{axis}
+\end{scope}
+\end{tikzpicture}

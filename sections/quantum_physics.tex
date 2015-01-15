@@ -1,4 +1,5 @@
-\section{Quantum Physics}
+% !TeX spellcheck = en_US
+\section{Quantum physics}
 
 A photon has the energy
 \begin{equation}
@@ -16,7 +17,7 @@ The electron momentum is
     p = m \nu
 \end{equation}
 
-\begin{table}[h!]
+\begin{table}[ht!]
     \centering
     \begin{tabular}{lll}
         & Photon & Electron \\ \toprule
@@ -29,7 +30,7 @@ The electron momentum is
 \subsection{Schrödinger Equation}
 The wave function of a free electron is
 \begin{equation}
-    \Psi(x,t) \propto e^{i (kx-\omega t)}
+    \Psi(x,t) \,\propto\, e^{i (kx-\omega t)}
 \end{equation}
 The Schrödinger equation for motion of a particle of mass $m$ in potential $V(x,t)$ is then
 \begin{equation}
@@ -46,7 +47,11 @@ one can get the time-dependent wave function $\Psi$ from the time-independent wa
 where $\omega = \frac{E}{\hbar}$.
 
 \subsection{Infinite Potential Well}
-%TODO: draw image
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/potential_well.tex}
+    \caption{Infinite potential well}
+\end{figure}
 The boundary conditions $\Psi=0$ for $x\leq 0$ and $x\geq a$ lead to the Schrödinger equation
 \begin{equation}
     \frac{d^2 \Psi}{d x^2} + \frac{2m}{\hbar^2} E \Psi = 0
@@ -58,9 +63,10 @@ The energy is thus
 \end{equation}
 
 \subsection{Tunneling}
-\begin{figure}[htbp]
+\begin{figure}[ht!]
     \centering
     \input{tikz/quantum_physics_tunneling}
+    \caption{Electron tunneling}
 \end{figure}
 
 The wave functions in the 3 regions are
@@ -86,10 +92,15 @@ Schrödinger equation with potential
 %TODO: draw prob density and energy states
 
 \subsection{Pauli Exclusion Principle}
-%TODO: add relevant stuff
+The Pauli exclusion principle states that no 2 electrons may have all identical quantum numbers. 
+In a single orbital, there can only be 2 electrons - one with spin up and one with spin down.
+%TODO: draw boxes?
 
 \subsection{Helium Atom}
 Potential energy of an electron in Helium
 \begin{equation}
     V(r_1,r_{12}) = -\frac{2e^2}{4 \pi \varepsilon_0 r_1} + \frac{e^2}{4 \pi \varepsilon_0 r_{12}}
 \end{equation}
+
+\subsection{Stimulated emission}
+%TODO - keine lust mehr!
