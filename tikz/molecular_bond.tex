@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+\pgfplotsset{ticks=none}
+\pgfplotsset{every axis x label/.style={
+    at={(0.5,0)},
+    below,
+    yshift=-5pt}
+}
+\pgfplotsset{every axis y label/.style={
+    at={(0,0.5)},
+    xshift=-15pt,
+    rotate=90}
+}
+
+\begin{scope}[shift={(-5,0)}]
+    \begin{axis}[domain=0.05:1,samples=101,
+        width = 8cm, height = 6cm,
+        xlabel={Interatomic separation $r$},
+        ylabel={Force},
+        xmin = 0.1, xmax = 0.5,
+        ymin = -1000, ymax = 1000,
+    ]
+        \addplot[black!80,mark=none] coordinates {(0,0)(1,0)};
+        \node at (axis cs:0.11,65) {0};
+        \addplot[HSRBlue,mark=none] {20/(x^2)};
+        \addplot[HSRBlue,mark=none] {-0.25/(x+0.1)^6};
+        \addplot[HSRHematite,mark=none] {20/(x^2) - 0.25/(x+0.1)^6};
+        \node[label={$r_0$},circle,fill=HSRHematite,inner sep=2pt] at (axis cs:0.16334,1) {};
+        \node at (axis cs:0.25,500) {$F_A$};
+        \node at (axis cs:0.21,-500) {$F_R$};
+        \node at (axis cs:0.25,65) {$F_N$};
+    \end{axis}
+\end{scope}
+
+\begin{scope}[shift={(+5,0)}]
+    \begin{axis}[domain=0:1,samples=101,
+        width = 8cm, height = 6cm,
+        xlabel={Interatomic separation $r$},
+        ylabel={Potential Energy},
+        xmin = 0, xmax = 0.8,
+        ymin = -200, ymax = 100,
+    ]
+        \addplot[black!80,mark=none] coordinates {(0,0)(1,0)};
+        \node at (axis cs:0.02,15) {0};
+        \addplot[HSRBlue,mark=none] {-20/x};
+        \addplot[domain=0.11:1,HSRBlue,mark=none] {1/(20*(x+0.1)^5)};
+        \addplot[HSRHematite,mark=none] {1/(20*(x+0.1)^5) - 20/x};
+        \node[label={ $r_0$},circle,fill=HSRHematite,inner sep=2pt] at (axis cs:0.16334,-82.96) {};
+        \node at (axis cs:0.4,20) {$E_R$};
+        \node at (axis cs:0.4,-70) {$E_A$};
+        \node at (axis cs:0.4,-30) {$E$};
+    \end{axis}
+\end{scope}
+
+
+\end{tikzpicture}
