@@ -1,10 +1,13 @@
+% !TeX spellcheck = en_US
 \section{Electric conduction}
+
+\subsection{Drude model of electrical conduction in solids}
 
 Ohm's law for the electric current density $J$ is
 \begin{equation}
-    J = \sigma E = e n v_d
+    J = \frac{\Delta q}{A \cdot \Delta t}\sigma E = e n v_d
 \end{equation}
-with the drift velocity
+with the electron density $n = \frac{N}{V}$ the drift velocity
 \begin{equation}
     v_d = \frac{e \tau}{m_e} E = \mu_d E \quad \approx \SI{1e-4}{\meter\per\second}
 \end{equation}
@@ -12,6 +15,9 @@ and drift mobility being
 \begin{equation}
     \mu_d = \frac{e \tau}{m_e} = \frac{e l}{m_e u}
 \end{equation}
+
+Thje mean speed $u$ of the electrons in a solid is $u\approx\SI{e6}{\meter\per\second}$.
+
 Conductivity
 \begin{equation}
     \frac{1}{\rho} = \sigma = e n \mu_d = \frac{e^2 n \tau}{m_e} = \frac{e^2 n l}{m_e u}
@@ -25,9 +31,65 @@ The mean free path length is
     l = u \tau
 \end{equation}
 
-Matthiessen's rule
+It follows that
+\begin{equation}
+    \sigma = e n \mu_d = \frac{e^2 n l}{m_e u}
+\end{equation}
+
+\subsection{Matthiessen's rule}
 \begin{equation}
     \rho = \rho_0 \left[ 1 + \alpha_0 \left( T - T_0 \right) \right]
+\end{equation}
+
+Resistivity and thermal coefficients for various metals are shown in appendix \ref{app:resistivity}
+
+Frequently, the resistivity can be \emph{empirically} represented by
+\begin{equation}
+    \rho = \rho_0 \left[ \frac{T}{T_0} \right]^n
+\end{equation}
+
+\section{Lorentz Force}
+
+The Lorentz force is
+\begin{align}
+    \vec{F_L} &= q \vec{v} \times \vec{B} \\
+    F_L &= q v B \sin(\theta)
+\end{align}
+where $q$ is the charge ov the moving particle, $v$ is its velocity,
+$B$ is the magnetic field and $\theta$ is the angle between the directions
+of $v$ and $B$.
+
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/lorentz.tex}
+    \caption{Lorentz force on a moving charge in a magnetic field}
+\end{figure}
+
+\subsection{Hall effect}
+
+The Hall coefficient  is defined as
+\begin{equation}
+    R_H = \frac{E_z}{J_x B_y} = -\frac{1}{en}
+\end{equation}
+The Hall voltage $V_H$ and the current $I_x$ are related by the geometry of the metal plate to the current density $J_x$ and the Hall field $E_H$, where $w_z$ is the width and $d_y$ the thickness of the plate.
+\begin{align}
+    J_x &= \frac{I_x}{w_z d_y} \\
+    E_H &= \frac{V_H}{w_z}
+\end{align}
+
+Hall coefficients of various metals are depicted in appendix~\ref{app:Hall}.
+
+\paragraph{Semiconductors}~\\
+If $n$ and $p$ are the concentrations of electrons and holes in a
+semiconductor crystal and have the drift velocities $\mu_e$ and $\mu_h$,
+the overall conductivity is given by
+\begin{equation}
+    \sigma = e p \mu_h + e n \mu_e
+\end{equation}
+
+The hall coefficient depends on both carriers and is then
+\begin{equation}
+    R_H = \frac{p \mu_h^2 - n \mu_e^2}{e\left(p \mu_h + n \mu_e \right)^2}
 \end{equation}
 
 
@@ -45,9 +107,11 @@ This is similar to Ohm's law:
 \end{equation*}
 In metals, $\kappa$ and $\sigma$ originate from free electrons and are related by the Wiedemann~Franz~Lorenz law
 \begin{equation}
-	\frac{\kappa}{\sigma T} = C_{WFL} = \text{const.}
+	\frac{\kappa}{\sigma T} = C_{\mathrm{WFL}} = \text{const.}
 \end{equation}
-where $C_{WFL}$ is called the Lorenz number or the Wiedemann~Franz~Lorenz coefficient.
+where $C_{\mathrm{WFL}}$ is called the Lorenz number or the Wiedemann~Franz~Lorenz coefficient.
 \begin{equation}
-	C_{WFL} = \frac{\pi^2 k_B^2}{3 e^2} = \SI{2.44e-8}{\watt\ohm\per\kelvin\squared}
+	C_{\mathrm{WFL}} = \frac{\pi^2 k_B^2}{3 e^2} = \SI{2.44e-8}{\watt\ohm\per\kelvin\squared}
 \end{equation}
+
+The thermal conductivity $\kappa$ for various materials is depicted in appendix~\ref{app:thermalcond}

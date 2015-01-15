@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=latex]
+\begin{scope}[shift={(-3,0)}]
+    \node[draw=HSRBlue,fill=HSRBlue80,circle,inner sep=2pt] (nucleus) at (0,0) {\tiny\textcolor{HSRWhite}{$\mathbf{+}$}};
+    \node at (0,0.5) {$q=+e$};
+    
+    \pgfmathparse{1/sqrt(2)};
+    \draw[thick,->] (nucleus) -- (1,0) node[anchor=west]{$\vec{v}$};
+    \draw[thick,->] (nucleus) -- (-\pgfmathresult,-\pgfmathresult) node[anchor=north east] {$\vec{B}$};
+    \draw[thick,->] (nucleus) -- (0,-1.5) node[anchor=north]{$F=q \vec{v} \times \vec{B}$};
+\end{scope}
+\begin{scope}[shift={(+3,0)}]
+    \node[draw=HSRBlue,fill=HSRBlue80,circle,inner sep=2pt] (nucleus) at (0,0) {\tiny\textcolor{HSRWhite}{$\mathbf{+}$}};
+    \node at (0,0.5) {$q=-e$};
+    
+    \pgfmathparse{1/sqrt(2)};
+    \draw[thick,->] (nucleus) -- (-1,0) node[anchor=east]{$\vec{v}$};
+    \draw[thick,->] (nucleus) -- (-\pgfmathresult,-\pgfmathresult) node[anchor=north east] {$\vec{B}$};
+    \draw[thick,->] (nucleus) -- (0,-1.5) node[anchor=north]{$F=q \vec{v} \times \vec{B}$};
+\end{scope}
+\end{tikzpicture}
