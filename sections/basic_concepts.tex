@@ -72,6 +72,11 @@ Root mean square velocity
 	v_{rms} = \sqrt{\frac{3 k_B T}{m}} = \sqrt{\frac{3RT}{M}}
 \end{equation}
 
+Maxwell's priciple of equipartition of energy assigns an average of $\frac{1}{2}k_b T$ to 
+each degree of freedom (e.g. translation in x,y,z, rotation in x,y,z, \ldots).
+The Rule of Dulong-Petit for the molar heat capacity of a solid is $C_m = 3R$.
+
+
 \subsection{Electric Noise}
 Root mean square voltage
 \begin{equation}
@@ -85,16 +90,70 @@ Velocity distribution function
 	n_v = N \cdot 4 \pi \left(\frac{m}{2\pi k_B T}\right)^2 v^2 e^{-\left(\frac{m v^2}{2 k_B T}\right)}
 \end{equation}
 
+Energy distribution function
+\begin{equation}
+    n_E = N \frac{2}{\sqrt{\pi}} \left(\frac{1}{k_B T}\right)^{3/2} E^{1/2} e^{-\frac{E}{k_B T}}
+\end{equation}
+
 Boltzmann factor
 \begin{align}
 	e^{-\left(\frac{E}{k_B T}\right)} \\
 	\frac{n_E}{N} = C_E \cdot e^{-\left(\frac{E}{k_B T}\right)}
 \end{align}
 
+\subsection{Thermally activated process}
+Many physical and chemical processes exhibit \emph{Arrhenius} type behavior, i.e. 
+the rate of change is proportional to $\exp(-E_A / k_B T)$ where $E_A$ is the activation energy.
+
+\subsubsection{Atomic diffusion}
+
+\begin{figure}[ht]
+    \centering
+    \input{tikz/atomicdiffusion.tex}
+    \caption{Atomic diffusion of impurity atoms}
+\end{figure}
+
+In diffusion of impurity atoms, the activation energy is $E_A = U_{A^*} - U_A$ where 
+$U_A$ is the potential at the original point $A$ and $U_{A^*}$ is the potential at
+the barrier between two sites. This leads to the \emph{frequency of jumps} $\vartheta$
+\begin{equation}
+    \vartheta = \text{const} \cdot v_0 \exp\left(-\frac{E_A}{k_B}\right)
+\end{equation}
+
+The total square displacement $L$ of an impurity atom after $N$ jumps is
+\begin{equation}
+    L^2 = X^2 + Y^2 = a^2 \vartheta t = 2 D t
+\end{equation}
+where $D$ is the diffusion coefficient
+\begin{equation}
+    D = \frac{1}{2} a^2 \vartheta = \frac{1}{2} a^2 v_0 C \exp\left(-\frac{E_A}{k_B T}\right) = D_0 \exp\left(-\frac{E_A}{k_B T}\right)
+\end{equation}
+
+
 \subsection{Energy of a photon}
 
 \begin{equation}
 	E = h \cdot f = \hbar \cdot \omega = \frac{h \cdot c}{\lambda}
 \end{equation}
+where the wave length $\lambda = \frac{c}{f}$. 
 
-Where the wave length $\lambda = \frac{c}{f}$. 
+%TODO add diagram from slide 22
+Adsorption of a photon lifts an electron from an initial energy state $E_i$ to a higher final
+energy state $E_f = E_i + hf$ where $hf$ is the photon energy.
+A photon with energy $hf$ is emitted when an electron drops from a higher initial state
+$E_i$ to a lower state $E_f$
+
+\subsubsection{Energy levels of hydrogen}
+
+\begin{equation}
+    E_n = -\frac{h c R_y}{n^2}
+\end{equation}
+where $n = 1,2,3,\ldots$ and $R_y$ is the Rydberg constant $R_y = \frac{m_e q_e^4}{\varepsilon_0^2 8 h^3 c}$=\SI{1.097e7}{\meter\tothe{-1}}
+
+\subsection{From atomic levels to energy bands}
+The electrons in an atom populate \emph{discrete} energy levels.
+When atoms for a crystal lattice, many electrons close together would occupy
+identical energy levels, which is not possible (exclusion principle of Pauli).
+The individual energy levels will therefore vary slightly, creating an \emph{energy band}
+%TODO add diagram from slide 25
+
