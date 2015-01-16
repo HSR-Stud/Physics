@@ -99,6 +99,8 @@
     \label{app:effectivemass}
 \end{table}
 
+%TODO: achtung newpage!!
+\newpage
 
 \section{Seebeck coefficients}
 \begin{table}[ht!]
@@ -117,4 +119,20 @@
     \end{tabular}
     \caption{Seebeck coefficients of selected materials. (Source: Kasap, Table 4.3)}
     \label{app:seebeck}
+\end{table}
+
+\section{Semiconductor properties}
+\begin{table}[ht!]
+    \centering
+    \begin{tabularx}{\linewidth}{lcccccccXXc}
+    \toprule
+        & $E_g$ & $\chi$ & $N_c$ & $N_v$ & $n_i$ & $\mu_e$ & $\mu_h$ & & & \\
+        & (\si{\electronvolt}) & (\si{\electronvolt}) & (\si{\centi\meter\tothe{-3}}) & (\si{\centi\meter\tothe{-3}}) & (\si{\centi\meter\tothe{-3}}) & (\si{\square\centi\meter\per\volt\second}) & (\si{\square\centi\meter\per\volt\second}) & $m_e^*/m_e$ & $m_h^*/m_e$ & $\varepsilon_r$ \\ \midrule
+        Ge & 0.66 & 4.13 & \num{1.04e19} & \num{6.0e18} & \num{2.3e13} & 3900 & 1900 & 0.12a 0.56b & 0.23a 0.40b & 16 \\
+        Si & 1.10 & 4.01 & \num{2.8e19} & \num{1.2e19} & \num{1.0e10} & 1350 & 450 & 0.26a 1.08b & 0.38a 0.60b & 11.9 \\
+        GaAs & 1.42 & 4.07 & \num{4.7e17} & \num{7e18} & \num{2.1e6} & 8500 & 400 & 0.067a,b & 0.40a 0.50b & 13.1 \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Selected typical properties of Ge, Si and GaAs at \SI{300}{\kelvin}}
+    \label{app:semiconductors}
 \end{table}
