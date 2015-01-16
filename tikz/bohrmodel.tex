@@ -9,31 +9,31 @@
     \node[draw=HSRBlue,,circle,inner sep=0pt] at (3.4,1) {\tiny\textcolor{HSRBlue}{+}};
     \node[draw=HSRBlue,,circle,inner sep=0pt] at (3.1,1.2) {\tiny\textcolor{HSRBlue}{+}};
     \node[draw=HSRBlue,,circle,inner sep=0pt] at (3.0,0.8) {\tiny\textcolor{HSRBlue}{+}};
-    \node[draw=HSRBasswood,fill=HSRBasswood40,circle,inner sep=2pt] at (3.4,1.3) {};
-    \node[draw=HSRBasswood,fill=HSRBasswood40,,circle,inner sep=2pt] at (3.3,0.7) {};
-    \node[draw=HSRBasswood,fill=HSRBasswood40,,circle,inner sep=2pt] at (2.85,1.1) {};
+    \node[draw=black,fill=black,circle,inner sep=2pt] at (3.4,1.3) {};
+    \node[draw=black,fill=black,circle,inner sep=2pt] at (3.3,0.7) {};
+    \node[draw=black,fill=black,circle,inner sep=2pt] at (2.85,1.1) {};
 
     
     % K-Shell
-    \draw[very thick,draw=HSRHematite60] (0,0) circle (1.0);
-    \node at (-0.866,-0.5) {\Large K};
-    \node at (0.866,-0.5) {1s};
+    \draw[very thick,draw] (0,0) circle (1.0);
+    \node at (-0.6,-0.5) {\Large K};
+    \node at (0.6,-0.4) {1s};
     \pgfmathparse{1/sqrt(2)}
-    \draw[draw,fill] (\pgfmathresult,-\pgfmathresult) circle (0.1);
-    \draw[draw,fill] (-\pgfmathresult,\pgfmathresult) circle (0.1);
+    \draw[draw=HSRBlue,fill=HSRBlue] (\pgfmathresult,-\pgfmathresult) circle (0.1);
+    \draw[draw=HSRBlue,fill=HSRBlue] (-\pgfmathresult,\pgfmathresult) circle (0.1);
     
     % L-Shell
-    \draw[very thick,draw=HSRHematite60] (0,0) circle (1.6);
-    \draw[very thick,draw=HSRHematite60] (0,0) circle (1.8);
-    \node at (-1.47224,-0.85) {\Large L};
-    \node at (1.50351,-0.54723) {2s};
-    \node at (1.55885,-0.9) {2p};
+    \draw[very thick,draw] (0,0) circle (1.6);
+    \draw[very thick,draw] (0,0) circle (1.8);
+    \node at (-1.7,-1) {\Large L};
+    \node at (1.3,-0.4) {2s};
+    \node at (1.8,-1) {2p};
     
-    \draw[draw,fill] (0,1.6) circle (0.1);
-    \draw[draw,fill] (0,-1.6) circle (0.1);
+    \draw[draw=HSRBlue,fill=HSRBlue] (0,1.6) circle (0.1);
+    \draw[draw=HSRBlue,fill=HSRBlue] (0,-1.6) circle (0.1);
     \pgfmathparse{1.8/sqrt(2)}
-    \draw[draw,fill] (\pgfmathresult,\pgfmathresult) circle (0.1);
-    \draw[draw,fill] (-\pgfmathresult,-\pgfmathresult) circle (0.1);
+    \draw[draw=HSRBlue,fill=HSRBlue] (\pgfmathresult,\pgfmathresult) circle (0.1);
+    \draw[draw=HSRBlue,fill=HSRBlue] (-\pgfmathresult,-\pgfmathresult) circle (0.1);
 
 
 \end{tikzpicture}

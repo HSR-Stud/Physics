@@ -1,10 +1,10 @@
 \begin{tikzpicture}[scale=0.5,transform shape,
-    atom/.style = {draw=HSRBasswood,fill=HSRBasswood60,circle,minimum height=1cm},
-    impurity/.style = {draw=HSRHematite,fill=HSRHematite80,circle,minimum height=0.45cm}
+    atom/.style = {draw=HSRBlue,fill=HSRBlue60,circle,minimum height=1cm},
+    impurity/.style = {draw=black,fill=black,circle,minimum height=0.45cm}
 ]
 
 \begin{scope}[shift={(-6,0)}]
-    \node at (3,5) {\Large\textcolor{HSRHematite}{$A$}};
+    \node at (3,5) {\Large\textcolor{black}{$A$}};
     \foreach \x in {1,...,5} {
         \foreach \y in {1,...,4} {
             \node[atom] at (\x,\y) {};
@@ -14,7 +14,7 @@
 \end{scope}
 
 \begin{scope}
-    \node at (3,5) {\Large\textcolor{HSRHematite}{$A^*$}};
+    \node at (3,5) {\Large\textcolor{black}{$A^*$}};
     \foreach \x in {1,...,5} {
         \foreach \y in {1,...,4} {
             \ifthenelse{\NOT\x=3 \OR \y=1 \OR \y=4}{
@@ -22,7 +22,7 @@
             }
             {
                 \ifthenelse{\y=3}{\def\offset{0.1}}{\def\offset{-0.1}}
-                \node[draw=HSRBasswood,fill=HSRBasswood,ellipse,minimum width=1cm, minimum height=0.8cm] at (\x,{\y+\offset}) {};
+                \node[draw=HSRBlue,fill=HSRBlue,ellipse,minimum width=1cm, minimum height=0.8cm] at (\x,{\y+\offset}) {};
             }
         }
     }
@@ -30,7 +30,7 @@
 \end{scope}
 
 \begin{scope}[shift={(6,0)}]
-    \node at (3,5) {\Large\textcolor{HSRHematite}{$B$}};
+    \node at (3,5) {\Large\textcolor{black}{$B$}};
     \foreach \x in {1,...,5} {
         \foreach \y in {1,...,4} {
             \node[atom] at (\x,\y) {};
