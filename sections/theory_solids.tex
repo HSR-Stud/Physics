@@ -1,8 +1,8 @@
+% !TeX spellcheck = en_US
 \section{Theory of solids}
 
 \subsection{Hydrogen molecule}
 Suppose two hydrogen atoms approaching each other
-%TODO add image
 Each electron in the H atom has a radial 1s wave function $\varPsi \propto e^{-\frac{r}{a_0}}$.
 The wave functions overlap as the two atoms approach.
 They can overlap either \emph{in phase} or \emph{out of phase}, which leads to the wave functions
@@ -10,28 +10,52 @@ They can overlap either \emph{in phase} or \emph{out of phase}, which leads to t
     \varPsi_{\sigma} &= \varPsi_{1s}(r_A) + \varPsi_{1s}(r_B) && \text{bonding} \\
     \varPsi_{\sigma *} &= \varPsi_{1s}(r_A) - \varPsi_{1s}(r_B) && \text{antibonding}
 \end{align}
-%TODO add image of both possibilities
 
-\begin{table}[htbp]
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/twohydrogenatoms.tex}
+    \caption{Molecular wavefunctions of two hydrogen atoms}
+\end{figure}
+
+\begin{table}[ht!]
     \centering
     \begin{tabularx}{0.8\linewidth}{lXXX}
+    \toprule
     $\varPsi_{\sigma}$ & No node, symmetric, bonding & High electron density between nuclei & Lower electrostat. energy \\
     $\varPsi_{\sigma *}$ & Node, antisymmetric, antibonding & Low electron density between nuclei & Higher electrostat. energy \\ 
+    \bottomrule
     \end{tabularx}
 \end{table}
 
-%TODO add image and text of energy level splitting
+\paragraph{Energy level splitting} 
+is due to interaction (overlap) between atomic orbitals.
+The atomic energy level $E_{1s}$ splits into 2 energy levels $E_{\sigma}$ and $E_{\sigma^*}$.
 
-Energy level splitting
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/energylevelsplitting.tex}
+    \caption{Energy level splitting in a $H_2$ molecule}
+\end{figure}
 
 \subsection{Formation of energy bands}
 For a large number of atoms $N$, the separation between energy levels becomes very small, which leads to the formation of energy bands.
-%TODO add omre
+As each energy level can take 2 electrons, the energy band is half full.
+
+\paragraph{Metals}
+In metals, the energy bands overlap to give a single band of energies.
 
 \subsection{Fermi energy}
 A $T=0$ all energy levels up to the \emph{Fermy energy} $E_F$ are full. 
-%TODO add picture
+
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/fermienergy.tex}
+    \caption{Typical electron energy band for a metal}
+\end{figure}
+
 The work function $\Phi$ is the energy required to remove an electron from the metal. 
+The Fermi energy and work function of selected metals is depicted in appendix~\ref{app:fermienergy}.
+
 Valence electrons in a metal form an electron gas, i.e. they are free to move around. 
 Each electron has a \emph{wavevector} $k$ and a momentum $p = \hbar k$.
 
@@ -39,50 +63,61 @@ The kinetic energy is then
 \begin{equation}
     E = \frac{p^2}{2m} = \frac{\hbar^2 k^2}{2m}
 \end{equation}
+%TODO: probably add parabola
 
-%TODO: image of sp3 orbitals
+If no electric field is applied, the same number of electrons is moving to the right
+and to the left. 
+In the presence of an electric field, the momentum is flipped and there is a
+net electric current.
 
 \subsection{Energy bands in silicon}
-%TODO: draw energy bands
 In Silicium $N$ $sp^3$ bands overlap to form a valence band (VB) and a conduction band (CB).  
 These are separated by the energy gap $E_g$.
+At $T=0$ the valence band is full and the conduction band is empty.
+
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/si_energybands.tex}
+    \caption{Energy bands in silicon}
+\end{figure}
+
+By an excitation process (e.g. thermal excitation), an electron in the CB and
+a hole in the VB can be generated.
 
 \subsection{Effective mass}
-%TODO draw
 In vacuum, the acceleration of an electron under effect of a force $F_{ext}$ is $a_{vac} = \frac{F_{ext}}{m_e}$. 
 In a crystal, internal forces $F_{int}$ exist, which leads to
 \begin{equation}
     a_{cryst} = \frac{F_{ext}+F_{int}}{m_e} = \frac{F_{ext}}{m_e^*}
 \end{equation}
 where $m_e^*$ is the effective mass.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lccccccccccc}
-    \toprule
-    Metal & Ag & Au & Bi & Cu & K & Li & Na & Ni & Pt & Zn \\
-    $\frac{m_e^*}{m_e}$ & 0.99 & 1.10 & 0.047 & 1.01 & 1.12 & 1.28 & 1.2 & 28 & 13 & 0.85 \\
-    \bottomrule
-    \end{tabular}
-    \caption{Effective mass $m_e^*$ of electrons in some metals}
-\end{table}
+A table of the effective mass for some metals is in appendix~\ref{app:effectivemass}.
 
 \subsection{Density of states}
 The density of states $g(E)$ is the number of states per energy volume. 
 $g(E) \propto \sqrt{E}$ at the bottom of the band and $g(E) \propto \sqrt{E_{top}-E}$ at the top of the band.
-%TODO: insert image
 
-The distribution of particles (here: electrons) when there are many more available states than there are particles is described by the \emph{Boltzmann energy distribution}.
+\paragraph{Distribution of electrons}
+The distribution of particles (here: electrons) when there are many more available
+ states than there are particles is described by the 
+ \emph{Boltzmann energy distribution}.
 \begin{equation}
     f(E) \:\propto\: e^{-\frac{E}{kT}}
 \end{equation} 
 
+\paragraph{Statistics of electrons in solids}
 The statistics of electrons in a solid is described by the \emph{Fermi-Dirac distribution}
-%TODO insert image
 \begin{equation}
     f(E) \:\propto\: \frac{1}{1 + e^{\frac{E-E_F}{kT}}}
 \end{equation}
 where $f(E)$ is the probability of finding an electron in a state with energy $E$.
+
+\begin{figure}[ht!]
+    \centering
+    %TODO: maybe fill stuff
+    \input{tikz/fermi-dirac.tex}
+    \caption{Fermi-Dirac distribution}
+\end{figure}
 
 %TODO: draw stuff from slide 19--> n_E
 
@@ -100,10 +135,18 @@ A mathematical approximation for $T > 0K$ yields
     E_F(t) = E_{F0} \left( 1 - \frac{\pi^2}{12} \left( \frac{kT}{E_{F0}} \right)^2 \right)
 \end{equation}
 
+\paragraph{Electrons in a semiconductor}
+%TODO: draw stuff from slide 21
+
 \subsection{Metal-Metal contact potential}
-%TODO: add image
 When 2 metals are brought together, a \emph{contact potential} $\Phi$ builds up.
 An equilibrium is reached when the Fermi levels reach the same value for both metals.
+
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/metal-metal.tex}
+    \caption{Metal-metal contact potential}
+\end{figure}
 
 \subsubsection{Thermoelectric effect (Seebeck effect)}
 A temperature difference between 2 points in a (semi-) conductor results in a voltage difference.
@@ -117,7 +160,7 @@ The Seebeck coefficient $S$ is calculated from the temperature difference $\Delt
 The Seebeck coefficient is dependent on the temperature $T_0$, i.e. $S = \left.\frac{dV}{dT}\right|_{T0}$.
 It can be calculated by the Mott and Jones equation
 \begin{equation}
-    S(T_0) \approx -\frac{\pi^2 k^2 T}{3 e E_{F0}} x
+    S(T) \approx -\frac{\pi^2 k^2 T}{3 e E_{F0}} x
 \end{equation}
 where $x$ is a numerical constant.
 

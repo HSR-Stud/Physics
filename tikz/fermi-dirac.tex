@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+
+\begin{scope}[shift={(-10,0)}]
+    \begin{axis}[
+        width=6cm, height=6cm,
+        domain=-10:10, samples=101,
+        xtick={0,0.5,1},ytick={1},
+        yticklabels={$E_{F}$},
+        legend pos=outer north east,
+        xlabel={$f(E)$}, ylabel={$E$},
+    ]
+        \addplot[HSRBlue] ({1/(1+exp((x-1)/0.001))},x);
+        \addplot[] ({1/(1+exp((x-1)/1))},x);
+        \addplot[dashed] ({1/(1+exp((x-1)/2))},x);
+
+        \legend{$T=0$,$T_1>0$,$T_2>T_1$}
+        
+    \end{axis}
+\end{scope}
+
+\begin{scope}[shift={(0,+1)}]
+    \draw (-0.5,2) -- (0,0) -- (1,0) -- (1.5,2);
+    \draw[HSRBlue] (-0.375,1.5) -- (1.375,1.5);
+    \node[anchor=north] at (0.5,0) {$T=0$};
+    
+\end{scope}
+
+\begin{scope}[shift={(+4,+1)}]
+    \draw (-0.5,2) -- (0,0) -- (1,0) -- (1.5,2);
+    \draw[HSRBlue]	(-0.375,1.5)	sin
+                    (-0.1563,1.625)	cos
+                    (0.0625,1.5)	sin
+                    (0.2813,1.375)	cos
+                    (0.5000,1.5)	sin
+                    (0.7188,1.625)	cos
+                    (0.9375,1.5)	sin
+                    (1.1563,1.375)	cos
+                    (1.375,1.5);
+    \node[anchor=north] at (0.5,0) {$T>0$};
+\end{scope}
+
+\end{tikzpicture}

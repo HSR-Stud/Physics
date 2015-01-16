@@ -1,0 +1,62 @@
+\begin{tikzpicture}[>=latex]
+    \begin{scope}[shift={(-8,0)}]
+        % Coordinate system
+        \draw[->] (0,0) -- (5,0);
+        \draw[dashed] (1,0) -- (1,2) node[anchor=south] {$r_A$};
+        \draw[dashed] (4,0) -- (4,2) node[anchor=south] {$r_B$};
+        
+        % Functions 
+        \draw[thick,HSRBlue,out=270,in=180] (1,1.6) to (2,0);
+        \draw[thick,HSRBlue,out=270,in=0] (1,1.6) to (0,0);
+        \draw[thick,HSRBlue,out=270,in=180] (4,1.6) to (5,0);
+        \draw[thick,HSRBlue,out=270,in=0] (4,1.6) to (3,0);
+        
+        % Nodes
+        \node at (0,1) {$\varPsi_{1s}(r_A)$};
+        \node at (5,1) {$\varPsi_{1s}(r_B)$};
+        \node[anchor=north] at (1,0) {A};
+        \node[anchor=north] at (4,0) {B};
+        \draw[<->] (1,-0.1) to (4,-0.1);
+        \node[anchor=north] at (2.5,-0.1) {$R=\infty$};
+    \end{scope}
+    \begin{scope}
+        % Coordinate system
+        \draw[->] (0,0) -- (3,0);
+        \draw[dashed] (1,0) -- (1,2) node[anchor=south] {$r_A$};
+        \draw[dashed] (2,0) -- (2,2) node[anchor=south] {$r_B$};
+        
+        % Functions 
+        \draw[thick,HSRBlue,out=270,in=0] (1,1.6) to (0,0);
+        \draw[thick,HSRBlue,out=270,in=180] (1,1.6) to (1.5,0.8);
+        \draw[thick,HSRBlue,out=270,in=0] (2,1.6) to (1.5,0.8);
+        \draw[thick,HSRBlue,out=270,in=180] (2,1.6) to (3,0);
+
+        % Nodes
+        \node[anchor=north] at (1.5,-0.5) {$\varPsi_{\sigma}=\varPsi_{1s}(r_A)+\varPsi_{1s}(r_B)$};
+        \node[anchor=north] at (1.5,-1) {in phase};
+        \node[anchor=north] at (1,0) {A};
+        \node[anchor=north] at (2,0) {B};
+        \draw[<->] (1,-0.1) to (2,-0.1);
+        \node[anchor=north] at (1.5,-0.1) {a};      
+    \end{scope}
+    \begin{scope}[shift={(+4,0)}]
+        % Coordinate system
+        \draw[->] (0,0) -- (3,0);
+        \draw[dashed] (1,0) -- (1,2) node[anchor=south] {$r_A$};
+        \draw[dashed] (2,0) -- (2,2) node[anchor=south] {$r_B$};
+        
+        % Functions 
+        \draw[thick,HSRBlue,out=270,in=0] (1,2) to (0,1);
+        \draw[thick,HSRBlue,out=270,in=180] (1,2) to (1.5,1);
+        \draw[thick,HSRBlue,out=90,in=0] (2,0) to (1.5,1);
+        \draw[thick,HSRBlue,out=90,in=180] (2,0) to (3,1);
+
+        % Nodes
+        \node[anchor=north] at (1.5,-0.5) {$\varPsi_{\sigma}=\varPsi_{1s}(r_A)-\varPsi_{1s}(r_B)$};
+        \node[anchor=north] at (1.5,-1) {out of phase};
+        \node[anchor=north] at (1,0) {A};
+        \node[anchor=north] at (2,0) {B};
+        \draw[<->] (1,-0.1) to (2,-0.1);
+        \node[anchor=north] at (1.5,-0.1) {a};      
+    \end{scope}
+\end{tikzpicture}

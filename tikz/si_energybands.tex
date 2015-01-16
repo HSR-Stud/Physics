@@ -1,0 +1,50 @@
+\begin{tikzpicture}[>=latex]
+    % Isolated Si atom
+    \draw[ultra thick,HSRBlue] (0,1) node[anchor=east] {$3p$} -- (1,1);
+    \draw[ultra thick,HSRBlue] (0,0) node[anchor=east] {$3s$} -- (1,0);
+    \draw[->] (0.3,0.8) -- (0.3,1.2);
+    \draw[->] (0.8,0.8) -- (0.8,1.2);
+    \draw[->] (0.3,-0.2) -- (0.3,0.2);
+    \draw[<-] (0.4,-0.2) -- (0.4,0.2);
+    \node[anchor=north,text width=1.5cm] at (0.5,-1.5) {Isolated Si atom};
+    
+    % connect
+    \draw[dashed] (1,1) -- (1.5,0.5) -- (1,0);
+    
+    % sp3 hybridization
+    \draw[ultra thick,HSRBlue] (1.5,0.5) -- (2.5,0.5);
+    \foreach \x in {1.7,1.9,...,2.3}{
+        \draw[->] (\x,0.3) -- (\x,0.8);
+    }
+    \node[anchor=north,text width=1.5cm] at (2.2,-1.5) {$sp^3$ hybridization};
+    
+    % connect
+    \draw[dashed] (3.5,-0.5) -- (2.5,0.5) -- (3.5,1.5);
+    
+    %Interaction of sp3 orbitals
+    \draw[ultra thick,HSRBlue] (3.5,-0.5) -- (4.5,-0.5);
+    \draw[ultra thick,HSRBlue] (3.5,1.5) -- (4.5,1.5);
+    \node[anchor=north] at (3.5,-0.5) {bonding};
+    \node[anchor=south] at (3.5,1.5) {antibonding};
+    \draw[->] (3.8,-0.7) -- (3.8,-0.3);
+    \draw[<-] (3.9,-0.7) -- (3.9,-0.3);
+    \node[anchor=north,text width=1.5cm] at (4.0,-1.5) {Interaction of 2 $sp^3$ orbitals};
+
+    % connect
+    \draw[dashed] (5,2.0) -- (4.5,1.5) -- (5,1.0);
+    \draw[dashed] (5,0) -- (4.5,-0.5) -- (5,-1.0);
+    
+    % bands
+    \draw (5,0) rectangle (7,-1);
+    \draw[fill=black!20] (5,2) rectangle (7,1);
+    \foreach \x in {5.1,5.3,...,6.9} {
+        \foreach \y in {-0.1,-0.3,...,-0.9} {
+            \node[fill=HSRBlue,circle,inner sep=1.8pt]  at (\x,\y) {};
+        }
+    }
+    \node[anchor=west] at (7,-0.5) {Valence band};
+    \node[anchor=west] at (7,1.5) {Conduction band};
+    \draw[<->] (6.8,0) -- (6.8,1) node[midway,anchor=west]{Energy gap $E_g$};
+    \node[anchor=north,text width=1.5cm] at (6.2,-1.5) {Band formation};
+
+\end{tikzpicture}

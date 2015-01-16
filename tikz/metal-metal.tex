@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+
+\begin{scope}[shift={(-4,0)}]
+
+    %Pt
+    \node[anchor=south] at (1,2) {Pt};
+    \draw[draw=black,fill=HSRBlue] (0,0) rectangle (2,0.5);
+    \draw[draw=black] (0,0.5) rectangle (2,2);
+    \draw[|<->|] (-0.5,2) -- (-0.5,0.5);
+    \node[anchor=south,rotate=90] at (-0.6,1) {$\Phi$=\SI{5.36}{\electronvolt}};
+    
+    %Mo
+    \node[anchor=south] at (4,2) {Mo};
+    \draw[draw=black,fill=HSRBlue] (3,0) rectangle (5,1.5);
+    \draw[draw=black] (3,1.5) rectangle (5,2);
+    \draw[|<->|] (5.5,2) -- (5.5,1.5);
+    \node[anchor=north,rotate=90] at (5.6,1) {$\Phi$=\SI{4.20}{\electronvolt}}; 
+    
+    \draw[dashed] (2,0.5) -- (3,1.5);   
+\end{scope}
+\begin{scope}[shift={(+4,0)}]
+
+    \draw[draw=black,fill=HSRBlue] (0,0) rectangle (2,0.5);
+    \draw[draw=black] (0,0.5) rectangle (2,2);
+    \draw[draw=black,fill=HSRBlue] (2,-1) rectangle (4,0.5);
+    \draw[draw=black] (2,0.5) rectangle (4,1);
+    
+    \draw[|<->|] (2.5,1.0) -- (2.5,2) node[midway,anchor=west] {$e\Delta V$=\SI{1.16}{\electronvolt}};
+    
+    \node[white] at (2.2,0.25) {\tiny\textbf{+}};
+    \node[white] at (1.8,0.25) {\tiny\textbf{-}};
+
+\end{scope}
+
+\end{tikzpicture}
