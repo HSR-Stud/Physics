@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+
+\begin{scope}[shift={(-5,0)}]
+    \node at (3,4) {Before contact};
+
+    % n-type semiconductor
+    \draw[draw=black,fill=HSRBlue] (0,0) rectangle (2,1);
+    \draw[draw=black,fill=none] (0,2) rectangle (2,3);
+    \node[anchor=south] at (1,3) {$n$-side};
+    \draw[dashed] (0,1.75) -- (2,1.75) node[anchor=west] {$E_{Fn}$};
+    \draw[<->] (0.8,1.75) -- (0.8,3) node[midway,anchor=west] {$\Phi_n$};
+    
+    
+    % p-type semiconductor
+    \draw[draw=black,fill=HSRBlue] (4,0) rectangle (6,1);
+    \draw[draw=black,fill=none] (4,2) rectangle (6,3);
+    \node[anchor=south] at (5,3) {$p$-side};
+    \draw[dashed] (4,1.25) -- (6,1.25) node[anchor=west] {$E_{Fp}$};
+    \draw[<->] (4.8,1.25) -- (4.8,3) node[midway,anchor=west] {$\Phi_p$};
+    
+\end{scope}
+\begin{scope}[shift={(+5,0)}]
+    \node at (2,4) {After contact};
+
+    \draw[draw=black,fill=HSRBlue] (0,-0.25) -- (1.75,-0.25) cos (2,0) sin (2.25,0.25) -- (4,0.25) -- (4,1.25) -- (2.25,1.25) cos (2,1) sin (1.75,0.75) -- (0,0.75) -- (0,-0.25);
+    \draw[draw=black,fill=none] (0,1.75) -- (1.75,1.75) cos (2,2) sin (2.25,2.25) -- (4,2.25) -- (4,3.25) -- (2.25,3.25) cos (2,3) sin (1.75,2.75) -- (0,2.75) -- (0,1.75);
+    \draw[dashed] (0,1.5) node[anchor=east] {$E_{Fn}$} -- (2,1.5);
+    \draw[dashed] (2,1.5) -- (4,1.5) node[anchor=west] {$E_{Fp}$};
+    \draw[dashed] (2,-0.5) -- (2,3.5);
+    
+    % eV0
+    \draw[dashed] (2.25,3.25) -- (1.5,3.25);
+    \draw[|<->|] (1.5,3.25) -- (1.5,2.75) node[midway,anchor=east] {$e V_0$};
+    
+    % plus/minus
+    \node[white] at (1.75,0.0833) {\tiny +};
+    \node[white] at (1.75,0.3333) {\tiny +};
+    \node[white] at (2.25,0.5833) {\tiny -};
+    \node[white] at (2.25,0.9166) {\tiny -};
+    
+\end{scope}
+
+
+\end{tikzpicture}
