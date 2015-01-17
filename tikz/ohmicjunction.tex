@@ -1,0 +1,37 @@
+\begin{tikzpicture}[>=latex]
+
+\begin{scope}[shift={(-5,0)}]
+    \node at (3,5) {Before contact};
+
+    % Metal
+    \draw[draw=black,fill=HSRBlue] (0,0) rectangle (2,3);
+    \draw[draw=black,fill=none] (0,3) rectangle (2,4);
+    \node[anchor=south] at (1,4) {Metal};
+    \node[anchor=east] at (0,3) {$E_{Fm}$};
+    \draw[<->] (0.8,3) -- (0.8,4) node[midway,anchor=west] {$\Phi_m$};
+    
+    % Semiconductor
+    \draw[draw=black,fill=HSRBlue] (4,0.5) rectangle (6,1.5);
+    \draw[draw=black,fill=none] (4,2.5) rectangle (6,4);
+    \node[anchor=south] at (5,4) {$n$-type semiconductor};
+    \draw[dashed] (4,2.3) -- (6,2.3) node[anchor=west] {$E_{Fn}$};
+    \draw[<->] (4.8,2.3) -- (4.8,4) node[midway,anchor=west] {$\Phi_n$};
+    
+\end{scope}
+
+\begin{scope}[shift={(+5,0)}]
+    \node at (2,5) {After contact};
+
+    % Metal
+    \draw[draw=black,fill=HSRBlue] (0,0) rectangle (2,3);
+    \draw[draw=black,fill=none] (0,3) rectangle (2,4);
+    \node[anchor=east] at (0,3) {$E_{Fm}$};
+    
+    % Semiconductor
+    \draw[draw=black,fill=none] (2,4) sin (2.5,4.5) -- (4,4.5) -- (4,3.2) -- (2.5,3.2) cos (2,2.7) -- (2,4);
+    \draw[draw=black,fill=HSRBlue] (2,1.7) sin (2.5,2.2) -- (4,2.2) -- (4,1.2) -- (2.5,1.2) cos (2,0.7) -- (2,1.7);
+    \draw[dashed] (2,3) -- (4,3) node[anchor=west] {$E_{Fn}$};
+   
+\end{scope}
+
+\end{tikzpicture}

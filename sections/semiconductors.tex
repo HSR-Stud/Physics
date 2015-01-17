@@ -154,11 +154,119 @@ The slope is a measure of energy gap.
 \end{equation}
 
 \paragraph{Drift mobility}
+Scattering comes from \emph{impurities} at low temperatures 
+($\mu \,\propto\, T^{+3/2}$) 
+and from \emph{lattice vibrations} at high temperatures 
+($\mu \,\propto\, T^{-3/2}$).
+The drift mobility is 
+\begin{equation}
+    \mu = \frac{e \tau}{m_e^*}
+\end{equation}
+where $\tau$ is the mean free time between scattering events.
+The mean free path $\lambda_{\textrm{mfp}}$ is
+\begin{equation}
+    \lambda_{\textrm{mfp}} = v_{th} \tau = \frac{1}{S N_S}
+\end{equation}
+where $S$ is the scattering cross-section, $N_S$ is the concentration of scatterers
+and $v_{th}$ is the thermal velocity.
+
+At high dopant concentrations, the electron and hole mobilities are limited
+by impurity scattering.
 
 \subsection{Direct and indirect recombination}
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/direct_indirect_recombination.tex}
+    \caption{Direct and indirect recombination in semiconductors}
+\end{figure}
+\begin{multicols}{2}
+    \paragraph{Direct recombination} 
+    Direct recombination happens through emission of photon,
+    so no momentum transfer is required. 
+    The high probability for recombination leads to a shorter carrier lifetime.
+    Direct recombination is mainly used in optically active materials, e.g. GaAs for LEDs
+    
+    \paragraph{Indirect recombination}
+    In Si and Ge recombination happens through recombination centers and thus
+    takes up any momentum difference between $e$ and $h$.
+    Due to the much lower likelihood, the carrier lifetime is longer.
+    Indirect semiconductors are not suitable for optical applications.
+\end{multicols}
+
+\paragraph{Photogeneration}
+When illumination a semiconductor with $h\nu > E_g$, electron-hole pairs are generated.
+After the light is turned off, excess electrons and holes disappear by recombination.
+
+The thermal equilibrium without illumination is
+\begin{equation}
+    n_{n0} p_{n0} = n_i^2
+\end{equation}
+The excess carrier concentration is $\Delta p_n = \Delta n_n$ which gives
+a minority carrier concentration of $p_n = p_{n0} + \Delta p_n$.
+The time evolution of excess minority carrier concentration is
+\begin{align}
+    \text{Change in excess hole concentration} &= \text{Photogeneration} - \text{Recombination} \notag \\
+    \frac{d \Delta p_n}{dt} &= G_{ph} - \frac{\Delta p_n}{\tau_h}
+\end{align}
+where $\tau_h$ is the minority carrier lifetime. 
+
+This leads to
+
+\begin{align}
+    \Delta p_n(t) &= \tau_h G_{ph} \left[ 1-e^{-\frac{t}{\tau_h}} \right] && \text{when switching on}\\
+    \Delta p_n(t) &= \tau_h G_{ph} e^{-\frac{t}{\tau_h}} && \text{when switching off}    
+\end{align}
+
+\paragraph{Low level injection}
+Low level injection in n-type semiconductors does not affect $n_n$, but drastically affects $p_n$
+%TODO: but why???
 
 \subsection{Optical absorption}
+%TODO: was gits do dezue z schriibe?
 
 \subsection{Schottky junction}
 
+Important: $\Phi_m > \Phi_n$
+
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/schottkyjunction.tex}
+    \caption{Schottky junction}
+\end{figure}
+
+From the CB to the metal, an $e^-$ tunnel is formed, which creates an $e^-$
+depleted region in the semiconductor.
+This built-in potential $V_0$ prevents a further flow of $e^-$.
+
+\begin{equation}
+    \Phi_B = \Phi_M - \chi = e V_0 + E_C - E_{Fn} > e V_0
+\end{equation}
+
+When applying a \emph{forward} bias, the electrons can easily overcome the small
+barrier to enter the metal.
+When applying a \emph{reverse} bias, the electrons in the metal cannot overcome
+the barrier $\Phi_B$ to enter the semiconductor.
+
+The Schottky junction is mainly used as diode. 
+It is also possible to build Schottky solar cells ($h\nu>E_g$) and photo diodes.
+
 \subsection{Ohmic contact}
+
+Important: $\Phi_m < \Phi_n$
+
+\begin{figure}[ht!]
+    \centering
+    \input{tikz/ohmicjunction.tex}
+    \caption{Ohmic junction}
+\end{figure}
+
+An $e^-$ tunnel into the semiconductor is built, which leads to an $e^-$
+accumulation in the semiconductor, near the junction. 
+This prevents a further $e^-$ flow. 
+There is no barrier for $e^-$ moving across the junction.
+
+\paragraph{Peltier effect}
+Current from SC into the metal results in a \emph{head absorption} at the junction,
+which creates a \emph{cooling effect}.
+Current from the metal into the SC results in a \emph{heat release} at the junction,
+which creates a \emph{heating effect}.

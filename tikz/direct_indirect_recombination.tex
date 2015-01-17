@@ -1,0 +1,56 @@
+\begin{tikzpicture}[>=latex]
+\begin{scope}[shift={(-5,0)}]
+    \begin{axis}[
+        axis lines=middle, ticks=none, clip=false,
+        domain=-pi:pi, samples=51,
+        width=6cm, height=4cm,
+        xmin=-pi, xmax=pi,
+        ymin=0, ymax=6,
+    ]
+        % Plots
+        \addplot[mark=none,black] {1.1+cos(deg(x))};
+        \addplot[mark=none,black] {5-cos(deg(x))};
+        
+        % Text
+        \node at (axis cs:-0.8,1) {VB};
+        \node at (axis cs:-0.8,5) {CB};
+    
+        % Electrons
+        \node[circle,draw=HSRBlue,fill=HSRBlue,inner sep=2] (e1) at (axis cs:0.1,4) {};
+        \node[circle,draw=HSRBlue,fill=none,inner sep=2] (e2) at (axis cs:0.1,2.1) {};
+        \draw[->] (e1) to (e2);
+        
+        % Photons
+        \draw[->,HSRBlue,decorate,decoration={snake}] (axis cs:0.5,3.05) to (axis cs:2,3.05) node[anchor=west]{Photon};
+    \end{axis}
+\end{scope}
+\begin{scope}[shift={(+5,0)}]
+    \begin{axis}[
+        axis lines=middle, ticks=none, clip=false,
+        domain=-pi:pi, samples=51,
+        width=6cm, height=4cm,
+        xmin=-pi, xmax=pi,
+        ymin=0, ymax=6,
+    ]
+        % Plots
+        \addplot[mark=none,black] {1.1+cos(deg(x))};
+        \addplot[mark=none,black] {4.5+cos(deg(1.5*x))};
+        
+        % Text
+        \node at (axis cs:-0.8,1) {VB};
+        \node at (axis cs:-1,5.5) {CB};
+    
+        % Electrons
+        \node[circle,draw=HSRBlue,fill=HSRBlue,inner sep=2] (e1) at (axis cs:1.5,4) {};
+        \node[circle,draw=HSRBlue,fill=none,inner sep=2] (e2) at (axis cs:0.1,2.1) {};
+        \node[rectangle,draw,fill,minimum height=4,minimum width=8,inner sep=0] (er) at (axis cs:0.1,3.5) {};
+        \draw[->] (e1) to (er);
+        \draw[->] (er) to (e2);
+        
+        % Photons
+        \draw[->,HSRBlue,decorate,decoration={snake}] (axis cs:0.8,4.0) to (axis cs:0.2,5.4);
+        \draw[->,HSRBlue,decorate,decoration={snake}] (axis cs:0.5,2.8) to (axis cs:2,2.8) node[anchor=west]{Photons};
+        
+    \end{axis}
+\end{scope}
+\end{tikzpicture}
