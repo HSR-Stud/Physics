@@ -1,0 +1,129 @@
+% !TeX spellcheck = en_US
+\section{Piezoelectricity}
+
+Certain crystals (e.g. quartz $SiO_2$, $BaTiO_3$, \ldots) become polarized
+when they are mechanically stressed and exhibit mechanical strain when
+they experience an electrical field.
+This requires a special crystal structure, i.e. \emph{no center of symmetry}.
+
+The induced polarization $P$ along $i$ by an applied stress $T$ along $j$ is
+\begin{equation}
+    P_i = d_{ij} T_j
+\end{equation}
+
+The induced strain $S$ along $j$ by an applied electric field $E$ along $i$ is
+\begin{equation}
+    S_j = d_{ij} E_i
+\end{equation}
+
+%TODO: Add image - centro-symmetric / noncentro-symmetric
+
+The efficiency of the conversion between mechanical and electrical energy is
+expressed as the \emph{electromechanical coupling factor} k
+\begin{equation}
+    k^2 = \frac{\text{Electrical energy conv. to mechanical energy}}{\text{Input of electrical energy}} = \frac{\text{Mechanical energy conv. to electrical energy}}{\text{Input of mechanical energy}}
+\end{equation}
+
+The $k$ and $d$ values of some piezo materials are depicted in appendix~\ref{app:piezo}.
+
+\subsection{Applications of piezoelectricity}
+\paragraph{Quartz oscillator}
+%TODO: draw image
+The mechanical resonant frequency is
+\begin{equation}
+    f_s = \frac{1}{2\pi\sqrt{LC}} = \frac{1}{2\pi\sqrt{\frac{m}{k}}}
+\end{equation}
+The electrodes lead to an antiresonant frequency
+\begin{equation}
+    f_a = \frac{1}{2\pi\sqrt{L\frac{C_0C}{C_0+C}}}
+\end{equation}
+
+\paragraph{Transducer}
+%TODO: add image
+
+\paragraph{Actuator}
+%TODO: add image
+
+\subsection{Ferroelectricity}
+Certain crystals are permanently polarized. 
+These crystals are called ferroelectric.
+The critical temperature above which ferroelectric property is lost is called
+the \emph{Curie temperature} ($T_C$).
+
+\subsection{Pyroelectricity}
+When the temperature of $BaTiO_3$ increases by $\delta T$, the crystal expands
+and the relative distances of ions change. This results in a change of 
+polarization by $\delta P$. The magnitude of this effect is the 
+\emph{pyroelectric coefficient}
+\begin{equation}
+    p = \frac{\delta P}{\delta P}
+\end{equation}
+
+This can be related to a change of the electric field $\delta E$
+\begin{equation}
+    \delta P = \varepsilon_0 (\varepsilon_r - 1) \delta E
+\end{equation}
+
+Some pyroelectric and ferroelectric crystals are depicted in appendix~\ref{app:pyroelectric}.
+
+\subsection{Piezoresistivity}
+When a mechanical stress is applied to a sample, it is found that the
+resistivity of the sample changes by an amount that depends on the stress.
+This \emph{piezoresistivity} is utilized in various sensor applications.
+
+The change in resistivity in semiconductors may be due to a change in the
+concentration of carriers or due to a change in the drift mobilities.
+In an $n$-type $Si$, the change in the electron mobility $\mu_e$ with
+mechanical strain $\varepsilon_m$ is of the order of
+$\frac{d\mu_e}{d\varepsilon_m} = \SI{e5}{\farad\centi\meter\squared\per\volt\second}$
+
+The fractional change of the resistivity $\rho$ along the current flow direction is
+\begin{equation}
+    \frac{\delta\rho}{\rho} = \pi_L \sigma_L + \pi_T \sigma_T
+\end{equation}
+Where $\sigma_L$ is stress parallel to the current $J_L$ and $\sigma_T$
+is stress perpendicular to $J_L$.
+
+The full description of piezoresistivity involves the tensor $\pi_ij$.
+In cubic crystals, the three principal coefficients $\sigma_{11}$, $\sigma_{12}$
+and $\sigma_{44}$ are sufficient.
+$\rho$ and $\Delta\rho$ are tensors of rank 4, $\sigma$ and $\tau$ are the
+normal stress and the shear stress.
+
+\begin{equation}
+    \Delta\rho = 
+    \begin{pmatrix}
+        \delta\rho_1\\ \delta\rho_2\\ \delta\rho_3\\ \delta\rho_{12}\\ \delta\rho_{13}\\ \delta\rho_{23}
+    \end{pmatrix}
+    = \rho_0
+    \begin{pmatrix}
+        \pi_{11} & \pi_{12} & \pi_{12} & 0 & 0 & 0 \\
+        \pi_{12} & \pi_{11} & \pi_{12} & 0 & 0 & 0 \\
+        \pi_{12} & \pi_{12} & \pi_{11} & 0 & 0 & 0 \\
+        0 & 0 & 0 & \pi_{44} & 0 & 0 \\
+        0 & 0 & 0 & 0 & \pi_{44} & 0 \\
+        0 & 0 & 0 & 0 & 0 & \pi_{44} \\
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        \sigma_1 \\ \sigma_2 \\ \sigma_3 \\ \tau_{12} \\ \tau_{13} \\ \tau_{23}
+    \end{pmatrix}
+\end{equation}
+
+The piezoresistive coefficients in the principal directions are calculated by
+\begin{align}
+    \pi_L &= \frac{\pi_{11} + \pi_{12} + \pi_{44}}{2} \\
+    \pi_T &= \frac{pi_{11} + \pi_{12} - \pi_{44}}{2}
+\end{align}
+
+Hooke's law for \emph{isotropic} material is
+$\sigma_m = E \varepsilon_m = E \frac{\delta L}{L}$,
+where $E$ is the elastic modulus (Young's modulus' 
+and $\varepsilon_m$ is the strain.
+
+The piezoresistivity can now be expressed by
+\begin{equation}
+    \frac{\delta\rho}{\rho} = \pi\sigma_m = \pi E \varepsilon_m = \pi E \frac{\delta L}{L} = K \frac{\delta L}{L}
+\end{equation}
+where the coefficient $K$ can be found in diagrams.
+%TODO: add diagram?
