@@ -14,7 +14,8 @@
     \draw[draw=black,fill=HSRBlue] (4,0.5) rectangle (6,1.5);
     \draw[draw=black,fill=none] (4,2.5) rectangle (6,4);
     \node[anchor=south] at (5,4) {$n$-type semiconductor};
-    \draw[dashed] (4,2.3) -- (6,2.3) node[anchor=west] {$E_{Fn}$};
+    \node[anchor=west] at (6,2.5) {$E_c$};
+    \draw[dashed] (4,2.3) -- (6,2.3) node[anchor=north west] {$E_{Fn}$};
     \draw[<->] (4.8,2.3) -- (4.8,4) node[midway,anchor=west] {$\Phi_n$};
     
 \end{scope}
@@ -30,7 +31,8 @@
     % Semiconductor
     \draw[draw=black,fill=none] (2,4) sin (2.5,3.7) -- (4,3.7) -- (4,2.2) -- (2.5,2.2) cos (2,2.5) -- (2,4);
     \draw[draw=black,fill=HSRBlue] (2,1.5) sin (2.5,1.2) -- (4,1.2) -- (4,0.2) -- (2.5,0.2) cos (2,0.5) -- (2,1.5);
-    \draw[dashed] (2,2) -- (4,2) node[anchor=west] {$E_{Fn}$};
+    \node[anchor=west] at (4,2.2) {$E_c$};
+    \draw[dashed] (2,2) -- (4,2) node[anchor=north west] {$E_{Fn}$};
     
     % Other stuff
     \draw[dashed] (1.5,2.5) -- (2.5,2.5);
